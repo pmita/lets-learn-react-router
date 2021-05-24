@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './Nav';
 import About from './About';
 import Shop from './Shop';
+import ItemDetail from './itemDetail';
 //Import Router related modules
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
@@ -14,14 +15,11 @@ function App() {
     <Router>
       <div className="App">
         <Nav />
-        //Switch allows us to render only the relative components based on our url
         <Switch>
-          //Route allows us to direct the user to the correct component/page based
-          //on the correct url. To avoid further configuring and future hastle
-          //we can also define exact routes for our components.
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/shop" component={Shop} />
+          <Route path="/shop" exact component={Shop} />
+          <Route path="/shop/:id" component={ItemDetail} />
         </Switch>
       </div>
 
