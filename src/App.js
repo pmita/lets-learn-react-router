@@ -1,9 +1,17 @@
 import './App.css';
+//Import components
+import Nav from './Nav';
+import About from './About';
+import Shop from './Shop';
+//Import Router related modules
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-
+      <Nav />
+      <About />
+      <Shop />
     </div>
   );
 }
